@@ -1,0 +1,34 @@
+<program>	::= <include>* <operation_def>+
+<include>	::= 'include' <filename> ';'
+
+<operation_def>	::= <literal> '(' <literal> (',' <literal>)* ')'
+		    '{' <operation>+ '}'
+
+<operation>	::=  <transform> (',' <transform>)* ';'
+		    | <conditional>
+		    | <loop>
+<transform>	::= <literal> '(' <literal>
+<conditional>	::= 'if' '(' <boolean> ')'
+		    '{' <operation>+ '}'
+		    [ [ 'elseif' '(' <boolean> ')'
+		        '{' <operation>+ '}'
+		      ]
+		      'else' '{' <operation>+ '}'
+		    ]
+<loop>		::= 'for' <literal> ',' <numeric> ',' <numeric>
+		    '{' <operation>+ '}'
+<literal>	::= (<letter> | <numeral> | '.' | '-' | '_' |)+
+		    | (<literal> '[' <numeric> ']')
+<numeric>	::= ( '(' <numeric> ')' )
+		    | ( <term> '+' <numeric> )
+		    | ( <term> '-' <numeric> )
+<term>		::= ( '(' <term> ')' )
+		    | <factor>
+		    | ( <factor> '*' <term> )
+		    | ( <factor> '/' <term> )
+<factor>	::= ['-'] (<numeral>+ | <literal>)
+<boolean>	::= <numeric> <relop> <numeric>
+<relop>		::= '=' | '!=' | '>' | '<' | '>=' | '<='
+<letter>	::= 'A' | 'B' | . . . | 'Z' | 'a' | 'b' | . . . | 'z'
+<numeral>	::= '0' | '1' | . . . | '9'
+<filename>	::= left purposely undefined

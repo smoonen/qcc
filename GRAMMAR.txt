@@ -1,0 +1,74 @@
+This file is Copyright 1999 by Scott C. Moonen.  All Rights Reserved.
+
+program		: transformations
+		  | includes transformations
+
+includes	: include IDENT ';'
+
+transformations	: transform
+		  | transformations transform
+
+transform	: IDENT '(' arg_list ')' '{' op_list '}'
+
+arg_list	: arg_group
+		  | arg_list ';' arg_group
+
+arg_group	: arg
+		  | arg_group ',' arg
+
+arg		: IDENT
+		  | IDENT '[' NUMBER ']'
+		  | IDENT '[' IDENT ']'
+
+op_list		: op_list operation
+		  | operation
+
+operation	: timeslice_trans ';'
+		  | conditional
+		  | loop
+
+timeslice_trans	: trans_op
+		  | timeslice_trans ',' trans_op
+
+trans_op	: IDENT '(' param_list ')'
+
+param_list	: param_group
+		  | param_list ';' param_group
+
+param_group	: param
+		  | param_group ',' param
+
+param		: NUMBER
+		  | IDENT
+		  | IDENT '[' expression ']'
+
+loop		: for IDENT ',' expression ',' expression '{' op_list '}'
+
+conditional	: cond_no_else
+		  | cond_no_else else '{' op_list '}'
+
+cond_no_else	: if '(' boolean ')' '{' op_list '}'
+		  | cond_no_else elseif '(' boolean ')' '{' op_list '}'
+
+expression	: term
+		  | expression '+' term
+		  | expression '-' term
+
+term		: factor
+		  | term '*' factor
+		  | term '/' factor
+
+factor		: '(' expression ')'
+		  | NUMBER
+		  | IDENT
+		  | '-' factor
+
+boolean		: expression rel_op expression
+
+rel_op		: '='
+		  | '!' '='
+		  | '<'
+		  | '>'
+		  | '<' '='
+		  | '>' '='
+
