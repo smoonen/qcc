@@ -165,15 +165,15 @@ Williams, Colin. _Explorations in Quantum Computing_.
 
 ## Endnotes
 
-[^1] Despite the non–linearity of many classical physical systems, it is interesting to note that the chaos of reality is built upon a foundation of _linear_ quantum systems.
+[^1]: Despite the non–linearity of many classical physical systems, it is interesting to note that the chaos of reality is built upon a foundation of _linear_ quantum systems.
 
-[^2] Probability evolution takes place through the evolution of a _probability wave_, which expresses the probability that a system is in a certain state. For example, a particle has a waveform describing the probability that it is at various locations.
+[^2]: Probability evolution takes place through the evolution of a _probability wave_, which expresses the probability that a system is in a certain state. For example, a particle has a waveform describing the probability that it is at various locations.
 
-[^3] Cat lovers may rest easy–no cats were harmed in the describing of this experiment.
+[^3]: Cat lovers may rest easy–no cats were harmed in the describing of this experiment.
 
-[^4] Depending, of course, on the probability of how many of the cat’s nine lives remain unspent.
+[^4]: Depending, of course, on the probability of how many of the cat’s nine lives remain unspent.
 
-[^5] This description is also simplified in that the vector components are all really complex numbers, but the vector itself must still be a unit vector. The probabilities for each value become the square of the norm of each component.
+[^5]: This description is also simplified in that the vector components are all really complex numbers, but the vector itself must still be a unit vector. The probabilities for each value become the square of the norm of each component.
 
-[^6] This is, of course, assuming an ideal noise–free system. Interesting work has been done with classical reversible computing, which avoids the entropy increase of discarding input values. This allows a system to function more efficiently, dissipating far less energy. Quantum systems already have this wonderful low–dissipation feature!
+[^6]: This is, of course, assuming an ideal noise–free system. Interesting work has been done with classical reversible computing, which avoids the entropy increase of discarding input values. This allows a system to function more efficiently, dissipating far less energy. Quantum systems already have this wonderful low–dissipation feature!
 
